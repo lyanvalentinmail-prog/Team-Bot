@@ -38,52 +38,28 @@
   <a href="https://www.mediafire.com/file/llugt4zgj7g3n3u/com.termux_1020.apk/file"><img src="https://img.shields.io/badge/Descargar-Termux-26C6DA?style=for-the-badge&logo=android" alt="Download Termux"></a>
 </p>
 
-### **`INSTALACIÓN`**
+### **`INSTALACIÓN EN UN SOLO COMANDO`**
 
-> Nota: Copie y pegue los comandos en Termux uno por uno.
-
-```bash
-termux-setup-storage
-```
+> Copie y pegue este único comando en Termux. Instalará las herramientas necesarias, descargará el bot, instalará sus dependencias y lo iniciará.
 
 ```bash
-apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
+termux-setup-storage && pkg update -y && pkg upgrade -y && pkg install -y git nodejs ffmpeg imagemagick && cd "$HOME" && git clone https://github.com/lyanvalentinmail-prog/Team-Bot.git && cd Team-Bot && npm install --no-bin-links && npm start
 ```
 
-```bash
-git clone https://github.com/Ryuzei-Ts/Raiden-WaBot && cd Raiden-WaBot
-```
-
-```bash
-yarn install
-```
-
-```bash
-npm install --no-bin-links
-```
-
-```bash
-npm update
-```
-
-```bash
-npm start
-```
-
-> Si aparece (Y/I/N/O/D/Z) [default=N] ? use la letra "y" + "ENTER" para continuar con la instalación
+> Cuando Android solicite acceso al almacenamiento, pulse **Permitir**. Si aparece una pregunta de confirmación en Termux, responda con **y** y presione **ENTER**.
 
 ### **✰ En caso de que no funcione**
 
 > Si después de instalar el bot en Termux y iniciar la sesión del bot
 
 ```bash
-cd && cd Raiden-WaBot && rm -rf Session && npm run qr
+cd "$HOME/Team-Bot" && rm -rf Session && npm start -- --qr
 ```
 
 > Esto funciona para generar un nuevo código:
 
 ```bash
-cd && cd Raiden-WaBot && rm -rf Session && npm run code
+cd "$HOME/Team-Bot" && rm -rf Session && npm start -- code
 ```
 
 ### **Solución de Problemas**
